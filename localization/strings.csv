@@ -1,0 +1,17 @@
+keys,en,fr,pt_BR
+NAME_PLAYER,Yu,Yu,Yu
+NAME_FLOCK,Flock,Flock,Flock
+NAME_STONY,Stony,Stony,Stony
+NAME_TOLD,Told,Told,Told
+HUD_FOOD_COUNT,Food: {collected} / {total},Nourriture : {collected} / {total},Comidinhas: {collected} / {total}
+UI_LANGUAGE_TITLE,Choose your language,Choisis ta langue,Escolha seu idioma
+UI_LANG_ENGLISH,English,Anglais,Inglês
+UI_LANG_FRENCH,French,Français,Francês
+UI_LANG_PORTUGUESE,Portuguese (Brazil),Portugais (Brésil),Português (Brasil)
+UI_CONTINUE,Continue,Continuer,Continuar
+UI_LEVEL_COMPLETE_TITLE,Home sweet home!,Douce maison !,Lar doce lar!
+UI_LEVEL_COMPLETE_BODY,You brought all the food home. Time for a nap!,Tu as ramené toute la nourriture à la maison. L'heure de la sieste !,Você trouxe toda a comidinha pra casa. Hora da soneca!
+DLG_FLOCK_INTRO_01,"Hey there, little one! Off to gather some snacks?",Hé petite ! Tu pars chercher des friandises ?,"Ei, pequena! Indo buscar umas comidinhas?"
+DLG_FLOCK_INTRO_02,Watch out for the squirrels - they love to steal food and run off.,Attention aux écureuils - ils adorent voler la nourriture et filer.,Cuidado com os esquilos - eles adoram roubar comida e sair correndo.
+DLG_FLOCK_INTRO_03,"If one grabs your food, just bark! That always scares them off.","S'il en attrape, aboie ! Ça leur fait toujours peur.","Se um deles pegar sua comida, é só latir! Isso sempre assusta eles."
+DLG_FLOCK_INTRO_04,Bring everything back to your bed and rest easy. Good luck!,Ramène tout à ton panier et repose-toi bien. Bonne chance !,Leve tudo pra sua caminha e descanse tranquila. Boa sorte!

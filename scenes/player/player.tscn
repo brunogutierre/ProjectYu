@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_75vfm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/bark.png" id="2_0owmy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/idle.png" id="3_qek5x"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/jump.png" id="4_5gtgg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/run_1.png" id="5_h17s1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/run_2.png" id="6_je7p5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fm80t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0owmy")
+}],
+"loop": true,
+"name": &"bark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qek5x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5gtgg")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_je7p5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx1jg"]
+size = Vector2(20, 26)
+
+[node name="Player" type="CharacterBody2D" unique_id=1144949593]
+collision_layer = 2
+script = ExtResource("1_75vfm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2133127621]
+sprite_frames = SubResource("SpriteFrames_fm80t")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=107808626]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_gx1jg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1926715776]
+position_smoothing_enabled = true

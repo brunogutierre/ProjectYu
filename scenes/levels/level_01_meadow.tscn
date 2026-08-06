@@ -1,0 +1,107 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/level_01_meadow.gd" id="1_3yao1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/environment/ground_strip.png" id="2_4l3mp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/environment/platform_strip.png" id="3_s1thp"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="4_jt11b"]
+[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="5_j003v"]
+[ext_resource type="PackedScene" path="res://scenes/npc/npc_flock.tscn" id="6_cypv6"]
+[ext_resource type="Script" path="res://scripts/npc/dialogue_npc.gd" id="7_1iq8e"]
+[ext_resource type="Resource" path="res://resources/dialogue/flock_intro.tres" id="8_0x4v1"]
+[ext_resource type="PackedScene" path="res://scenes/items/food_item.tscn" id="9_i6w1w"]
+[ext_resource type="Script" path="res://scripts/items/food_item.gd" id="10_404s5"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/squirrel/squirrel.tscn" id="11_mlh34"]
+[ext_resource type="Script" path="res://scripts/enemies/squirrel/squirrel_controller.gd" id="12_efsp8"]
+[ext_resource type="PackedScene" path="res://scenes/hideout/squirrel_hideout.tscn" id="13_6r0wd"]
+[ext_resource type="Script" path="res://scripts/hideout/squirrel_hideout.gd" id="14_63rlw"]
+[ext_resource type="PackedScene" path="res://scenes/goal/dog_bed.tscn" id="15_mk3lq"]
+[ext_resource type="Script" path="res://scripts/goal/dog_bed.gd" id="16_wpdj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8s5g"]
+size = Vector2(1216, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0jls"]
+size = Vector2(160, 32)
+
+[node name="Level01Meadow" type="Node2D" unique_id=1817845445]
+script = ExtResource("1_3yao1")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1273624825]
+position = Vector2(0, 300)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=89013805]
+texture = ExtResource("2_4l3mp")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1731187451]
+position = Vector2(608, 48)
+shape = SubResource("RectangleShape2D_k8s5g")
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1116292971]
+position = Vector2(650, 220)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=417480321]
+texture = ExtResource("3_s1thp")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=578263451]
+position = Vector2(80, 16)
+shape = SubResource("RectangleShape2D_j0jls")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1144949593 instance=ExtResource("4_jt11b")]
+position = Vector2(50, 280)
+collision_layer = 2
+script = ExtResource("5_j003v")
+
+[node name="NpcFlock" type="Node2D" parent="." unique_id=564825977 node_paths=PackedStringArray("prompt_indicator") instance=ExtResource("6_cypv6")]
+position = Vector2(160, 284)
+script = ExtResource("7_1iq8e")
+dialogue_data = ExtResource("8_0x4v1")
+prompt_indicator = NodePath("PromptIndicator")
+
+[node name="FoodItem1" type="Area2D" parent="." unique_id=1078872217 instance=ExtResource("9_i6w1w")]
+position = Vector2(300, 284)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("10_404s5")
+
+[node name="FoodItem2" type="Area2D" parent="." unique_id=467337831 instance=ExtResource("9_i6w1w")]
+position = Vector2(420, 284)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("10_404s5")
+
+[node name="FoodItem3" type="Area2D" parent="." unique_id=1979247617 instance=ExtResource("9_i6w1w")]
+position = Vector2(560, 284)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("10_404s5")
+
+[node name="FoodItem4" type="Area2D" parent="." unique_id=443341977 instance=ExtResource("9_i6w1w")]
+position = Vector2(700, 196)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("10_404s5")
+
+[node name="FoodItem5" type="Area2D" parent="." unique_id=906150439 instance=ExtResource("9_i6w1w")]
+position = Vector2(1000, 284)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("10_404s5")
+
+[node name="Squirrel" type="CharacterBody2D" parent="." unique_id=343816656 instance=ExtResource("11_mlh34")]
+position = Vector2(560, 280)
+collision_layer = 4
+script = ExtResource("12_efsp8")
+
+[node name="SquirrelHideout" type="Node2D" parent="." unique_id=756620676 instance=ExtResource("13_6r0wd")]
+position = Vector2(850, 288)
+script = ExtResource("14_63rlw")
+
+[node name="DogBed" type="Area2D" parent="." unique_id=1358386566 instance=ExtResource("15_mk3lq")]
+position = Vector2(1150, 286)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("16_wpdj4")

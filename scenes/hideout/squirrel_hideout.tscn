@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/hideout/squirrel_hideout.gd" id="1_xodf5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/environment/hideout_bush.png" id="2_vwemy"]
+
+[node name="SquirrelHideout" type="Node2D" unique_id=756620676]
+script = ExtResource("1_xodf5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=790250222]
+texture = ExtResource("2_vwemy")

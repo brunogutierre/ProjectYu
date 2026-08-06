@@ -1,0 +1,90 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_b1x3f"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_01_meadow.tscn" id="2_a8run"]
+[ext_resource type="Script" path="res://scripts/levels/level_01_meadow.gd" id="3_ouso4"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="4_blune"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="5_th5th"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue_box.tscn" id="6_7smn1"]
+[ext_resource type="Script" path="res://scripts/ui/dialogue_box.gd" id="7_raeie"]
+[ext_resource type="PackedScene" path="res://scenes/ui/language_select.tscn" id="8_hxu8e"]
+[ext_resource type="Script" path="res://scripts/ui/language_select.gd" id="9_nvumn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou6is"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+bg_color = Color(1, 0.98, 0.92, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85, 0.55, 0.35, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Main" type="Node" unique_id=1051846495]
+script = ExtResource("1_b1x3f")
+
+[node name="Level01Meadow" type="Node2D" parent="." unique_id=1817845445 instance=ExtResource("2_a8run")]
+script = ExtResource("3_ouso4")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=421941073 instance=ExtResource("4_blune")]
+script = ExtResource("5_th5th")
+
+[node name="DialogueBox" type="CanvasLayer" parent="." unique_id=885750805 instance=ExtResource("6_7smn1")]
+script = ExtResource("7_raeie")
+
+[node name="LanguageSelect" type="CanvasLayer" parent="." unique_id=254331866 instance=ExtResource("8_hxu8e")]
+script = ExtResource("9_nvumn")
+
+[node name="LevelCompletePanel" type="CanvasLayer" parent="." unique_id=1525837437]
+
+[node name="Control" type="Control" parent="LevelCompletePanel" unique_id=1415032532]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Dim" type="ColorRect" parent="LevelCompletePanel/Control" unique_id=771457288]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.1, 0.08, 0.06, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="LevelCompletePanel/Control" unique_id=1746593061]
+custom_minimum_size = Vector2(320, 160)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -80.0
+offset_right = -160.0
+offset_bottom = -80.0
+pivot_offset = Vector2(160, 80)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ou6is")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelCompletePanel/Control/Panel" unique_id=744483709]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="LevelCompletePanel/Control/Panel/VBoxContainer" unique_id=1006577999]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.22, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+text = "Home sweet home!"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="LevelCompletePanel/Control/Panel/VBoxContainer" unique_id=315207819]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.22, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+text = "You brought all the food home. Time for a nap!"
+horizontal_alignment = 1
+autowrap_mode = 2
