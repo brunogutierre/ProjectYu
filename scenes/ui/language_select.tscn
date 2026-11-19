@@ -1,0 +1,72 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/language_select.gd" id="1_plevm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsqaa"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+bg_color = Color(1, 0.98, 0.92, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85, 0.55, 0.35, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="LanguageSelect" type="CanvasLayer" unique_id=254331866]
+script = ExtResource("1_plevm")
+
+[node name="Control" type="Control" parent="." unique_id=1138589636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Dim" type="ColorRect" parent="Control" unique_id=671965323]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.1, 0.08, 0.06, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="Control" unique_id=602601991]
+custom_minimum_size = Vector2(260, 220)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -110.0
+offset_right = -130.0
+offset_bottom = -110.0
+pivot_offset = Vector2(130, 110)
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsqaa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=82609090]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Control/Panel/VBoxContainer" unique_id=2112154525]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.22, 0.1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Choose your language"
+horizontal_alignment = 1
+
+[node name="ButtonEnglish" type="Button" parent="Control/Panel/VBoxContainer" unique_id=1608447770]
+layout_mode = 2
+text = "English"
+
+[node name="ButtonFrench" type="Button" parent="Control/Panel/VBoxContainer" unique_id=2039343031]
+layout_mode = 2
+text = "French"
+
+[node name="ButtonPortuguese" type="Button" parent="Control/Panel/VBoxContainer" unique_id=2141657441]
+layout_mode = 2
+text = "Portuguese (Brazil)"
